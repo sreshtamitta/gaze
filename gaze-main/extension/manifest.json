@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Gaze",
+  "version": "1.0",
+  "description": "Detects tab switches and focus events, sends them to local dashboard, and notifies user.",
+  "permissions": [
+    "tabs",
+    "notifications",
+    "storage",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+        "16": "icons/gaze_icon_16.png",
+        "48": "icons/gaze_icon_48.png",
+        "128": "icons/gaze_icon.png"
+        }
+    },
+  "web_accessible_resources": [
+    {
+      "resources": ["ding.mp3", "offscreen.html", "offscreen.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
